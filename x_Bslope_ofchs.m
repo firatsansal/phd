@@ -12,6 +12,7 @@ List_ch= {'Fp1','Fpz','Fp2','F7','F5','F3','F1','Fz','F2',...
     'P5','P3','P1','Pz','P2','P4','P6','PPO1','PPO2',...
     'PO7','PO1','POz','PO2','PO8','O1','Oz','O2'};
 
+
     s_ind=zeros(n_s,length(List_ch));%subject index
   labels = {'1', '2', '3', '4','5','6','7','8','9','10'} ;
 for k=1:4;
