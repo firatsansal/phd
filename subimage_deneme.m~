@@ -47,7 +47,7 @@
 % col=col+1;
 % 
 % end
-close all
+
 figure
 
 Gs=jet(N);
@@ -56,10 +56,9 @@ map=colormap(Gs(40:end-50,:));
 map=[[1 1 1];map;[0 0 0]];
 map(1,:)=[0 0 0];
 [ha, pos] = tight_subplot(4,7,[.01 .0003],[.1 .01],[.01 .01],26) ;
-for ii = 1:26; axes(ha(ii)); imshow(z);colormap(map);caxis([-1 1]); end 
+for ii = 1:27; axes(ha(ii)); imshow(z);if ii==26 colorbar;end;colormap(map);caxis([-1 1]); end 
 set(ha(1:4),'XTickLabel',''); set(ha,'YTickLabel','')
-hb=colorbar;
-set(hb,'Units','normalized', 'position', [0.8 0.1 0.01 0.2]);
+
 
 % colormap(map)
 % colorbar;

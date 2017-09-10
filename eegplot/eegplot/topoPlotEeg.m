@@ -1,4 +1,4 @@
-% cd /Users/firatmac/Dropbox/eeg-nirs/phd/eegplot/eegplot %phd
+ cd /Users/firatmac/Dropbox/eeg-nirs/phd
 % 
 %  brain=imread('brain.png');         
 %          imshow(brain);
@@ -9,6 +9,7 @@
          %ch=[y x];
         
        %  mag=R(:,ch_nirs);
+       load ch_locations
           mag=rand(58,1) ;
          ch_disp=1;
          unorm=1;
@@ -120,5 +121,5 @@ map=colormap(Gs(40:end-50,:));
 map=[[1 1 1];map;[0 0 0]];
 %map(1,:)=[0 0 0];
 colormap(map)
-%colorbar;
+colorbar;
 caxis([-1 1])
