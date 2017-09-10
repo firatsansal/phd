@@ -1,7 +1,8 @@
 n=112000;
 
 oldcd=cd;
-cd /home/firat/Desktop/mercury;
+%cd /home/firat/Desktop/mercury; phd office
+cd /Users/firatmac/Yandex.Disk.localized/mercury_data %mac
 names=dir;
   
 %data=cell(10,2,2);

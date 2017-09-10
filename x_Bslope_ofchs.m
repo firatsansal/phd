@@ -61,15 +61,15 @@ for ch_nirs=1:26
        %    [r,p]=corrcoef(x1, y1);
           [r,p]=corr(x1', y1','type','Spearman');
           
-if (p(1) <alpha) %*  ch_roi(ch_eeg,ch_nirs)                  
-Fit = polyfit(x1,y1,1); % x = x data, y = y data, 1 = order of the polynomial.
-figure
-scatter(x1,y1)
-hold on
-plot(x1,polyval(Fit,x1),'r');
-title([List_ch(ch_eeg) '-' num2str(ch_nirs) '-' num2str(k) 'r=' num2str(r(1))]);
-text (x1*1.05, y1*1.05, labels( find(s_ind(:,ch_eeg)==1)), 'FontSize', 18, 'Color', 'b') 
-end 
+% if (p(1) <alpha) %*  ch_roi(ch_eeg,ch_nirs)                  
+% Fit = polyfit(x1,y1,1); % x = x data, y = y data, 1 = order of the polynomial.
+% figure
+% scatter(x1,y1)
+% hold on
+% plot(x1,polyval(Fit,x1),'r');
+% title([List_ch(ch_eeg) '-' num2str(ch_nirs) '-' num2str(k) 'r=' num2str(r(1))]);
+% text (x1*1.05, y1*1.05, labels( find(s_ind(:,ch_eeg)==1)), 'FontSize', 18, 'Color', 'b') 
+% end 
           
           P(ch_eeg,ch_nirs,k)=p(1);
           R(ch_eeg,ch_nirs,k)=r(1);

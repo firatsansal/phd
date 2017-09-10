@@ -9,6 +9,7 @@ for i=1:10;
         for k=1:4;
             
 switch metric
+    
 case 1 
                     
                     for ch=1:size(data{i,j,k},2)

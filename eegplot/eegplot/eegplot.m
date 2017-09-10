@@ -1,4 +1,4 @@
-function [z,map]=eegplot(mag,ch,unorm,ch_disp,method,color_res)
+function [z,map]=eegplot(mag,ch,unorm,ch_disp,method,color_res,c1,c2,depth,trans)
 % [z,map]=eegplot(mag,ch,unorm,ch_disp,method,color_res)
 % 
 % Plots Topographic map from scattered data points on a head.
@@ -38,7 +38,10 @@ function [z,map]=eegplot(mag,ch,unorm,ch_disp,method,color_res)
 % 
 % color_res - Set the color resolution in the colorbar. Maximum resolution
 %                    is 256 (also default if left empty).
-%                    
+% - c1: color vector given as Intensity or RGB color. Initial value.
+% - c2: same as c1. This is the final value of the gradient.
+% - depth: number of colors or elements of the gradient.
+% - trans: transparency 0-1                    
 % ***Example 1
 %
 %
@@ -135,7 +138,7 @@ mi=min(z(:));
 step=(ma-mi)/(N-2);
 
 black= mi + (-1)*step;
-z(isnan(z))=black;
+z(isnan(z))=[1 1 1];
 
 %Set Electrode sites equal to black
 if(~isempty(ch_disp)),
@@ -155,6 +158,7 @@ end
 %Display
 %figure;
 imshow(z);
+[grad,im]=colorGradient(c1,c2,234);
 map=colormap(grad);
 map(1,:)=[0 0 0];
 colormap(map)
